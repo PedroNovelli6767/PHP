@@ -1,0 +1,21 @@
+<?php
+
+$numerom = (int) readline("Digite o minimo do numero que vc quer acertar: ");
+$numeroM = (int) readline("Digite o maximo do numero que vc quer acertar: ");
+
+$numero = rand($numerom, $numeroM);
+$chute = null;
+$tentativas = 0;
+
+while ($chute !== $numero) {
+    $chute = (int) readline("Digite um numero: ");
+    $tentativas++;
+
+    if ($chute === $numero) {
+        print "Acertou! Voce precisou de $tentativas tentativa(s).\n";
+    } elseif ($chute < $numero) {
+        print "O numero secreto e maior.\n";
+    } else {
+        print "O numero secreto e menor.\n";
+    }
+}
